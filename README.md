@@ -1,170 +1,339 @@
-# Cursor Free Trial Reset Tool
+# 🚀 Cursor Free Trial Reset Tool
 
-[English](#english) | [中文](#chinese)
+<div align="center">
 
-### Important Notice | 重要声明
-This tool is only intended for the following specific scenarios:
-1. During Cursor's official free trial period
-2. When system mistakenly flags as duplicate trial due to technical issues
-3. As a temporary solution when official support is not readily available
+[![Release](https://img.shields.io/github/v/release/yuaotian/go-cursor-help?style=flat-square&logo=github&color=blue)](https://github.com/yuaotian/go-cursor-help/releases/latest)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=bookstack)](https://github.com/yuaotian/go-cursor-help/blob/master/LICENSE)
+[![Stars](https://img.shields.io/github/stars/yuaotian/go-cursor-help?style=flat-square&logo=github)](https://github.com/yuaotian/go-cursor-help/stargazers)
 
-Please note:
-- This tool is not meant for bypassing paid features or cracking software
-- If your trial period has expired, please purchase a license or seek alternatives
-- It's recommended to contact official support first
-- Please ensure you are within valid trial period before using this tool
+[🌟 English](README.md) | [🌏 中文](README_CN.md)
 
-本工具仅用于解决以下特定场景:
-1. 在Cursor官方承诺的免费试用期内
-2. 由于技术原因导致系统误判为重复试用
-3. 无法通过正常渠道及时获得官方支持时的临时解决方案
+<img src="https://ai-cursor.com/wp-content/uploads/2024/09/logo-cursor-ai-png.webp" alt="Cursor Logo" width="120"/>
 
-请注意:
-- 本工具不是用于规避付费或破解软件
-- 如果您已超出试用期,请购买正版授权或寻找其他替代方案
-- 建议优先通过官方支持渠道解决问题
-- 使用本工具前请确认您处于有效的试用期内
-
-<a name="english"></a>
-## English
-
-### Description
-A tool to resolve the following prompt issue during Cursor's free trial period:
-```
-Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.
-```
-
-### Features
-- Reset Cursor free trial limitations
-- Provides both automatic and manual reset methods
-- Support multiple platforms
-
-### System Support
-- ✅ Windows (Tested)
-- ✅ MacOS (Tested)
-- ✅ Linux (Tested)
-
-### Automatic Reset
-#### Prerequisites
-- Requires administrator/root privileges
-- Ensure Cursor is completely closed before use
-
-#### Usage
-1. Download the appropriate executable for your system:
-   - Windows: `cursor_id_modifier.exe`
-   - MacOS: `cursor_id_modifier_mac` or `cursor_id_modifier_mac_arm64`
-   - Linux: `cursor_id_modifier_linux`
-2. Run the program as administrator
-3. Follow the prompts
-4. Restart Cursor to apply changes
-
-### Manual Reset
-1. Close Cursor completely
-2. Locate the storage.json file:
-   - Windows: `%APPDATA%\Roaming\Cursor\User\globalStorage\storage.json`
-   - MacOS: `~/Library/Application Support/Cursor/User/globalStorage/storage.json`
-   - Linux: `~/.config/Cursor/User/globalStorage/storage.json`
-3. Make the file writable (if needed):
-   - Windows: Right click -> Properties -> Uncheck "Read-only"
-   - MacOS/Linux: `chmod 666 storage.json`
-4. Edit the file and replace these fields with new random values:
-   ```json
-   {
-     "telemetry.macMachineId": "generate-64-char-hex",
-     "telemetry.machineId": "generate-64-char-hex",
-     "telemetry.devDeviceId": "generate-uuid-format"
-   }
-   ```
-   - For hex values: Use 64 characters (0-9, a-f)
-   - For UUID: Use format like "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-5. Make the file read-only:
-   - Windows: Right click -> Properties -> Check "Read-only"
-   - MacOS/Linux: `chmod 444 storage.json`
-6. Restart Cursor
-
-### ⚠️ Cautions
-1. Use this tool at your own risk
-2. Backup important data before use
-3. For educational and research purposes only
-
-### Disclaimer
-This tool is for educational purposes only. Users bear all risks and responsibilities associated with its use.
-
-### Contributing
-Issues and Pull Requests are welcome to help improve this project.
+</div>
 
 ---
 
-<a name="chinese"></a>
-## 中文
+### 📝 Description
 
-### 问题描述
-解决Cursor在免费订阅期间出现以下提示的问题:
+> When you encounter any of these messages:
+
+#### Issue 1: Trial Account Limit <p align="right"><a href="#issue1"><img src="https://img.shields.io/badge/Move%20to%20Solution-Blue?style=plastic" alt="Back To Top"></a></p>
+
+```text
+Too many free trial accounts used on this machine.
+Please upgrade to pro. We have this limit in place
+to prevent abuse. Please let us know if you believe
+this is a mistake.
 ```
-Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.
+
+#### Issue 2: API Key Limitation <p align="right"><a href="#issue2"><img src="https://img.shields.io/badge/Move%20to%20Solution-green?style=plastic" alt="Back To Top"></a></p>
+
+```text
+[New Issue]
+
+Composer relies on custom models that cannot be billed to an API key.
+Please disable API keys and use a Pro or Business subscription.
+Request ID: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
-### 功能特性
-- 重置Cursor免费试用限制
-- 提供自动和手动重置方法
-- 支持多个操作系统平台
+#### Issue 3: Trial Request Limit
 
-### 系统支持
-- ✅ Windows (已测试)
-- ✅ MacOS (已测试)
-- ✅ Linux (已测试)
+> This indicates you've reached the usage limit during the VIP free trial period:
 
-### 自动重置
-#### 使用前提
-- 需要管理员/root权限执行
-- 请确保已完全退出Cursor程序
+```text
+You've reached your trial request limit.
+```
 
-#### 使用方法
-1. 下载对应系统的可执行文件：
-   - Windows系统：`cursor_id_modifier.exe`
-   - MacOS系统：`cursor_id_modifier_mac` 或 `cursor_id_modifier_mac_arm64`
-   - Linux系统：`cursor_id_modifier_linux`
-2. 以管理员身份运行程序
-3. 按照提示进行操作
-4. 重启Cursor即可
+<br>
 
-### 手动重置
-1. 完全关闭Cursor
-2. 找到storage.json文件：
-   - Windows: `%APPDATA%\Roaming\Cursor\User\globalStorage\storage.json`
-   - MacOS: `~/Library/Application Support/Cursor/User/globalStorage/storage.json`
-   - Linux: `~/.config/Cursor/User/globalStorage/storage.json`
-3. 修改文件为可写（如果需要）：
-   - Windows: 右键 -> 属性 -> 取消勾选"只读"
-   - MacOS/Linux: `chmod 666 storage.json`
-4. 编辑文件，替换以下字段为新的随机值：
-   ```json
-   {
-     "telemetry.macMachineId": "生成64位十六进制",
-     "telemetry.machineId": "生成64位十六进制",
-     "telemetry.devDeviceId": "生成UUID格式"
-   }
-   ```
-   - 十六进制值：使用64个字符(0-9, a-f)
-   - UUID格式：类似 "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-5. 将文件设为只读：
-   - Windows: 右键 -> 属性 -> 勾选"只读"
-   - MacOS/Linux: `chmod 444 storage.json`
-6. 重启Cursor
+<p id="issue2"></p>
 
-### ⚠️ 注意事项
-1. 使用本工具需要您自行承担风险
-2. 建议在重要数据做好备份后使用
-3. 本工具仅用于学习研究,请勿用于商业用途
+#### Solution : Uninstall Cursor Completely And Reinstall (API key Issue)
 
-### 免责声明
-本工具仅供学习交流使用,使用本工具所造成的任何问题由使用者自行承担。
+1. Download [Geek.exe Uninstaller[Free]](https://geekuninstaller.com/download)
+2. Uninstall Cursor app completely
+3. Re-Install Cursor app
+4. Continue to Solution 1
 
-### 贡献
-欢迎提交Issue和Pull Request来帮助改进这个项目。
+<br>
 
-## License
-MIT License
+<p id="issue1"></p>
+
+> Temporary Solution:
+
+#### Solution 1: Quick Reset (Recommended)
+
+1. Close Cursor application
+2. Run the machine code reset script (see installation instructions below)
+3. Reopen Cursor to continue using
+
+#### Solution 2: Account Switch
+
+1. File -> Cursor Settings -> Sign Out
+2. Close Cursor
+3. Run the machine code reset script
+4. Login with a new account
+
+#### Solution 3: Network Optimization
+
+If the above solutions don't work, try:
+
+- Switch to low-latency nodes (Recommended regions: Japan, Singapore, US, Hong Kong)
+- Ensure network stability
+- Clear browser cache and retry
+
+### 💻 System Support
+
+<table>
+<tr>
+<td>
+
+**Windows** ✅
+
+- x64 (64-bit)
+- x86 (32-bit)
+
+</td>
+<td>
+
+**macOS** ✅
+
+- Intel (x64)
+- Apple Silicon (M1/M2)
+
+</td>
+<td>
+
+**Linux** ✅
+
+- x64 (64-bit)
+- x86 (32-bit)
+- ARM64
+
+</td>
+</tr>
+</table>
+
+### 🚀 One-Click Solution
+
+<details open>
+<summary><b>Global Users</b></summary>
+
+**macOS**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_mac_id_modifier.sh | sudo bash 
+```
+
+**Linux**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash 
+```
+
+**Windows**
+
+```powershell
+irm https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+```
+
+<div align="center">
+<img src="img/run_success.png" alt="Run Success" width="600"/>
+</div>
+
+</details>
+
+<details open>
+<summary><b>China Users (Recommended)</b></summary>
+
+**macOS**
+
+```bash
+curl -fsSL https://aizaozao.com/accelerate.php/c | sudo bash
+```
+
+**Linux**
+
+```bash
+curl -fsSL https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_linux_id_modifier.sh | sudo bash
+```
+
+**Windows**
+
+```powershell
+irm https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+```
+
+</details>
+
+<details open>
+<summary><b>Windows Terminal Run and Configuration</b></summary>
+
+#### How to Open Administrator Terminal in Windows:
+
+##### Method 1: Using Win + X Shortcut
+```md
+1. Press Win + X key combination
+2. Select one of these options from the menu:
+   - "Windows PowerShell (Administrator)"
+   - "Windows Terminal (Administrator)"
+   - "Terminal (Administrator)"
+   (Options may vary depending on Windows version)
+```
+
+##### Method 2: Using Win + R Run Command
+```md
+1. Press Win + R key combination
+2. Type powershell or pwsh in the Run dialog
+3. Press Ctrl + Shift + Enter to run as administrator
+   or type in the opened window: Start-Process pwsh -Verb RunAs
+4. Enter the reset script in the administrator terminal:
+
+irm https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+```
+
+##### Method 3: Using Search
+>![Search PowerShell](img/pwsh_1.png)
+>
+>Type pwsh in the search box, right-click and select "Run as administrator"
+>![Run as Administrator](img/pwsh_2.png)
+
+Enter the reset script in the administrator terminal:
+```powershell
+irm https://aizaozao.com/accelerate.php/https://raw.githubusercontent.com/yuaotian/go-cursor-help/refs/heads/master/scripts/run/cursor_win_id_modifier.ps1 | iex
+```
+
+### 🔧 PowerShell Installation Guide 
+
+If PowerShell is not installed on your system, you can install it using one of these methods:
+
+#### Method 1: Install via Winget (Recommended)
+
+1. Open Command Prompt or PowerShell
+2. Run the following command:
+```powershell
+winget install --id Microsoft.PowerShell --source winget
+```
+
+#### Method 2: Manual Installation
+
+1. Download the installer for your system:
+   - [PowerShell-7.4.6-win-x64.msi](https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x64.msi) (64-bit systems)
+   - [PowerShell-7.4.6-win-x86.msi](https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-x86.msi) (32-bit systems)
+   - [PowerShell-7.4.6-win-arm64.msi](https://github.com/PowerShell/PowerShell/releases/download/v7.4.6/PowerShell-7.4.6-win-arm64.msi) (ARM64 systems)
+
+2. Double-click the downloaded installer and follow the installation prompts
+
+> 💡 If you encounter any issues, please refer to the [Microsoft Official Installation Guide](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows)
+
+</details>
+
+#### Windows 安装特性:
+
+- 🔍 Automatically detects and uses PowerShell 7 if available
+- 🛡️ Requests administrator privileges via UAC prompt
+- 📝 Falls back to Windows PowerShell if PS7 isn't found
+- 💡 Provides manual instructions if elevation fails
+
+That's it! The script will:
+
+1. ✨ Install the tool automatically
+2. 🔄 Reset your Cursor trial immediately
+
+### 📦 Manual Installation
+
+> Download the appropriate file for your system from [releases](https://github.com/yuaotian/go-cursor-help/releases/latest)
+
+<details>
+<summary>Windows Packages</summary>
+
+- 64-bit: `cursor-id-modifier_windows_x64.exe`
+- 32-bit: `cursor-id-modifier_windows_x86.exe`
+</details>
+
+<details>
+<summary>macOS Packages</summary>
+
+- Intel: `cursor-id-modifier_darwin_x64_intel`
+- M1/M2: `cursor-id-modifier_darwin_arm64_apple_silicon`
+</details>
+
+<details>
+<summary>Linux Packages</summary>
+
+- 64-bit: `cursor-id-modifier_linux_x64`
+- 32-bit: `cursor-id-modifier_linux_x86`
+- ARM64: `cursor-id-modifier_linux_arm64`
+</details>
+
+### 🔧 Technical Details
+
+<details>
+<summary><b>Configuration Files</b></summary>
+
+The program modifies Cursor's `storage.json` config file located at:
+
+- Windows: `%APPDATA%\Cursor\User\globalStorage\storage.json`
+- macOS: `~/Library/Application Support/Cursor/User/globalStorage/storage.json`
+- Linux: `~/.config/Cursor/User/globalStorage/storage.json`
+</details>
+
+<details>
+<summary><b>Modified Fields</b></summary>
+
+The tool generates new unique identifiers for:
+
+- `telemetry.machineId`
+- `telemetry.macMachineId`
+- `telemetry.devDeviceId`
+- `telemetry.sqmId`
+</details>
+
+<details>
+<summary><b>Manual Auto-Update Disable</b></summary>
+
+Windows users can manually disable the auto-update feature:
+
+1. Close all Cursor processes
+2. Delete directory: `C:\Users\username\AppData\Local\cursor-updater`
+3. Create a file with the same name: `cursor-updater` (without extension)
+
+macOS/Linux users can try to locate similar `cursor-updater` directory in their system and perform the same operation.
+
+</details>
+
+<details>
+<summary><b>Safety Features</b></summary>
+
+- ✅ Safe process termination
+- ✅ Atomic file operations
+- ✅ Error handling and recovery
+</details>
+
+---
+
+### 📚 Recommended Reading
+
+- [Cursor Issues Collection and Solutions](https://mp.weixin.qq.com/s/pnJrH7Ifx4WZvseeP1fcEA)
+- [AI Universal Development Assistant Prompt Guide](https://mp.weixin.qq.com/s/PRPz-qVkFJSgkuEKkTdzwg)
+
+---
+
+## ⭐ Project Stats
+
+<div align="center">
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yuaotian/go-cursor-help&type=Date)](https://star-history.com/#yuaotian/go-cursor-help&Date)
+
+![Repobeats analytics image](https://repobeats.axiom.co/api/embed/ddaa9df9a94b0029ec3fad399e1c1c4e75755477.svg "Repobeats analytics image")
+
+</div>
+
+## 📄 License
+
+<details>
+<summary><b>MIT License</b></summary>
 
 Copyright (c) 2024
 
@@ -178,8 +347,4 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-
-
-
-
-
+</details>
